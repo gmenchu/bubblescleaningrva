@@ -1,0 +1,1452 @@
+/* Reset */
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fa; /* light neutral background */
+  color: #222;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #fff;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px; /* reduced from 150px for better scaling */
+  z-index: 10000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: padding 0.3s ease;
+}
+
+/* Responsive padding */
+@media (max-width: 1200px) {
+  header {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 600px) {
+  header {
+    padding: 0 20px;
+  }
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #31ADC6; /* brand color for the text logo */
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+.logo:hover {
+  color: #2385a0; /* slightly darker teal on hover */
+}
+
+.logo-img {
+  height: 80px;
+  width: auto;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+/* Slightly brighten logo on hover */
+.logo-img:hover {
+  filter: brightness(1.1);
+}
+
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  background: #ffffffcc; /* subtle transparent white background */
+  padding: 10px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 0 0 20px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+nav > ul {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown button */
+.dropbtn {
+  cursor: pointer;
+  user-select: none;
+  color: #004080;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.dropbtn:hover,
+.dropdown:hover > .dropbtn {
+  background: #31ADC6;
+  color: white;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 230px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+/* Dropdown links */
+.dropdown-content li a {
+  display: block;
+  padding: 12px 20px;
+  color: #004080;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.dropdown-content li a:hover {
+  background-color: #31ADC6;
+  color: white;
+}
+
+/* Show dropdown on hover of parent (desktop) */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Optional: Adjust nav spacing for dropdown */
+nav > ul > li.dropdown {
+  padding-right: 10px;
+}
+
+/* Call Button */
+.call-btn {
+  background: #31ADC6; 
+  color: white;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(49, 173, 198, 0.6);
+}
+.call-btn:hover {
+  background: #2385a0; /* slightly darker teal */
+  box-shadow: 0 6px 15px rgba(35, 133, 160, 0.8);
+}
+
+/* Book Now Button */
+.book-btn {
+  background: #004080;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.6);
+}
+.book-btn:hover {
+  background: #ffbf00; /* brand yellow */
+  box-shadow: 0 6px 18px rgba(255, 191, 0, 0.8);
+}
+/* Promo Popup Styles */
+.promo-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-content {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 32px;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  font-size: 1.25rem;
+  color: #333;
+  position: relative;
+  border: 3px solid #31adc6;
+}
+
+.close-promo {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.close-promo:hover {
+  color: #31adc6;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 90vh;
+  background: url('https://i.imgur.com/WLohx7E.jpeg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  margin-top: 85px; /* accounts for fixed header height */
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 64, 128, 0.6); /* Navy overlay with 60% opacity */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 100px;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 70px;
+  color: #fff;
+  background-color: rgba(0, 64, 128, 0.6);
+  border-radius: 40px;
+  font-size: 1.2rem;
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 700px;
+  margin-right: 40px;
+}
+
+.hero-left h1 {
+  font-size: 4.1rem;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  color: #ffff; /* Brand color for strong hero title */
+}
+
+.hero-left p {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  max-width: 600px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  color: #e6f7fb; /* softer brand-tinted text */
+}
+.hero-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin-top: 20px;
+}
+
+.hero-tag {
+  background-color: #ffffffcc;
+  color: #004080;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+  border: 1px solid #dce3f0;
+}
+
+.hero-tag:hover {
+  transform: scale(1.05);
+}
+
+.hero-right {
+  flex: 1;
+  max-width: 500px;
+  background: #ffffffcc; /* White with slight transparency */
+  padding: 60px 30px;
+  border-radius: 30px;
+  color: #004080;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.hero-right h2,
+.hero-right p {
+  color: #004080;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.hero-right .checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 4px solid #ffd700;
+  position: relative;
+  animation: scaleIn 0.3s ease forwards;
+  margin: 20px auto;
+}
+
+.hero-right .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 35px;
+  width: 20px;
+  height: 40px;
+  border-right: 4px solid #004080;
+  border-bottom: 4px solid #004080;
+  transform: rotate(45deg) scale(0);
+  animation: check 0.4s 0.3s ease forwards;
+}
+
+@keyframes check {
+  to { transform: rotate(45deg) scale(1); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.hero-right h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #004080;
+  margin-bottom: 25px;
+}
+
+.hero-right select,
+.hero-right input,
+.hero-right button {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-right button {
+  background: #31ADC6;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 90px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(49, 173, 198, 0.6);
+}
+
+.hero-right button:hover {
+  background: #ffbf00;
+}
+
+/* Form disclaimer styling - outside hero-right block */
+.form-disclaimer {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.form-disclaimer a {
+  color: #004080;
+  text-decoration: underline;
+}
+/* Success message container inside hero-right */
+.hero-right .form-success-message {
+  display: none;
+  margin-top: 20px;
+  color: #004080;
+  font-weight: 600;
+  text-align: center;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Reuse your existing button styles for the success button/link */
+.hero-right .form-success-message .book-now-btn {
+  margin-top: 15px;
+  display: inline-block;
+  background: #31ADC6;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 90px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(49, 173, 198, 0.6);
+  transition: background 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-right .form-success-message .book-now-btn:hover {
+  background: #ffbf00;
+}
+
+/* Fade-in animation for the success message */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ABOUT SECTION */
+.about-section {
+  padding: 80px 20px;
+  background: #f8fdff; /* Light brand-tinted background for a clean feel */
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1400px;
+  padding: 0 40px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  color: #004080; /* Deep navy for strong readable text */
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  text-align: left;
+}
+
+.about-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #31ADC6; /* Brand color for main about title */
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #004080; /* Keeps section headings distinct and readable */
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333; /* Neutral dark for body text */
+}
+
+.about-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-list li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.about-list li strong {
+  color: #31ADC6; /* Brand color highlights within lists */
+}
+
+.about-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.img-top {
+  align-self: flex-start;
+  transform: translate(50px, 100px); /* adjust as desired for stylish offset */
+}
+
+.img-bottom {
+  align-self: flex-end;
+  transform: translate(50px, 100px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+  .about-section .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-text {
+    text-align: center;
+  }
+  .about-images {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .img-top, .img-bottom {
+    align-self: center;
+    max-width: 45%;
+    transform: none; /* remove transform on small screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .about-images {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .img-top, .img-bottom {
+    max-width: 100%;
+  }
+}
+
+.about-cta-btn {
+  display: inline-block;
+  background: #31ADC6; /* Brand color CTA */
+  color: white;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-top: 30px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.about-cta-btn:hover {
+  background: #2385a0; /* Slightly darker shade for hover effect */
+  transform: scale(1.05);
+}
+
+/* SERVICES SECTION */
+#services {
+  padding: 80px 20px;
+  background: #e6f7fb; /* Light background for services section to contrast brand elements */
+  text-align: center;
+}
+
+#services h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #31ADC6; /* Brand color for the section title */
+  margin-bottom: 50px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  .services-grid .service-card:nth-child(4) {
+    grid-column: 2; /* centers the fourth card below the top three */
+  }
+}
+
+.service-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #31ADC6; /* thin blue border */
+  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5); /* glow effect */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #004080; /* Deep blue for titles within cards for clear hierarchy */
+  font-weight: 700;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #555; /* Slightly darker for readability */
+}
+
+.learn-more-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #31ADC6; /* Brand color CTA button */
+  color: white;
+  padding: 10px 25px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.learn-more-btn:hover {
+  background: #2385a0; /* Slightly darker shade for hover */
+}
+
+/* Service Modal Styles */
+
+.service-modal {
+  background: white;
+  max-width: 1000px;
+  width: 90%;
+  border-radius: 12px;
+  padding: 50px;
+  position: relative;
+  text-align: left;
+  max-height: 90vh;
+  overflow-y: auto;
+   border: 2px solid #31ADC6; /* thin blue border */
+  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5); /* glow effect */
+}
+.service-modal h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #31ADC6; /* Brand color in modal titles */
+}
+
+.service-modal p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.service-modal ul li {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+/* === Checklist Grid Section === */
+#checklist {
+  background-color: #f8fdff; /* Very light tint of brand color for subtle section background */
+  padding: 80px 20px;
+}
+
+#checklist h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+  font-size: 2.8rem;
+  color: #31ADC6; /* Brand color for the title */
+}
+
+/* Checklist Table */
+#checklistTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+#checklistTable th,
+#checklistTable td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+#checklistTable th {
+  background-color: #31ADC6;
+  color: white;
+  text-align: center;
+}
+
+.area-name {
+  background-color: #e6f7fb;
+  font-weight: 600;
+  width: 180px;
+  color: #004080;
+}
+
+.checklist-item {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.checklist-item i {
+  color: #28a745; /* Green checkmark */
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #checklistTable,
+  #checklistTable thead,
+  #checklistTable tbody,
+  #checklistTable th,
+  #checklistTable td,
+  #checklistTable tr {
+    display: block;
+  }
+
+  #checklistTable tr {
+    margin-bottom: 20px;
+  }
+
+  #checklistTable td {
+    padding-left: 50%;
+    position: relative;
+  }
+
+  #checklistTable td::before {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #31ADC6;
+  }
+
+  #checklistTable td:nth-of-type(1)::before {
+    content: "Area";
+  }
+
+  #checklistTable td:nth-of-type(2)::before {
+    content: "Standard Cleaning";
+  }
+
+  #checklistTable td:nth-of-type(3)::before {
+    content: "Deep Cleaning";
+  }
+
+  #checklistTable td:nth-of-type(4)::before {
+    content: "Move In/Out Cleaning";
+  }
+
+  #checklistTable th {
+    display: none;
+  }
+
+  .area-name {
+    background-color: transparent;
+    font-weight: 700;
+    color: #004080;
+  }
+}
+
+/* Service Areas Section */
+.service-areas {
+  padding: 80px 20px;
+  text-align: center;
+  background: #e6f7fb; /* Light tint of brand color for subtle, professional background */
+}
+
+.service-areas h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #31ADC6; /* Brand color for the title */
+  margin-bottom: 50px;
+}
+
+.areas-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.area-box {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 400px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border: 2px solid #31ADC6; /* thin blue border */
+  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5); /* glow effect */
+}
+
+.area-box img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.area-box h3 {
+  margin: 0;
+  padding: 20px;
+  font-size: 1.6rem;
+  color: #004080; /* Deep blue for strong readability */
+  background: #ffffff;
+  font-weight: 700;
+}
+.area-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.15);
+}
+
+/* Optional: Add a thin brand-colored border on hover for visual feedback */
+.area-box:hover {
+  border: 2px solid #31ADC6;
+}
+
+/* Modal Styles */
+.area-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.area-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.area-modal {
+  background: white;
+  max-width: 1000px;
+  width: 90%;
+  border-radius: 12px;
+  padding: 50px;
+  position: relative;
+  text-align: left;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 2px solid #31ADC6; /* thin blue border */
+  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5); /* glow effect */
+}
+
+.area-modal-close {
+  position: absolute;
+  top: 10px; right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #004080;
+}
+
+.area-modal h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #31ADC6; /* Brand color in modal titles */
+}
+
+.area-modal p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.area-modal ul {
+  list-style: none;
+  padding: 0;
+}
+
+.area-modal li {
+  margin-bottom: 12px;
+}
+
+/* === Booking Form Section === */
+#book-now {
+  /*padding: 4rem 2rem;*/
+  background: #ffff;
+  border-top: 3px solid #31adc6;
+  border-bottom: 3px solid #31adc6;
+  max-width: 2200px;
+}
+
+.form-container {
+  width: 100vw;
+  max-width: 1900px;  /* Limit max width for better readability */
+  margin: 0 auto;
+  /*padding: 1rem;*/
+  background: white;
+  /*border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);*/
+}
+
+.form-container h2 {
+  font-size: 2rem;
+  color: #ffff;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.form-container iframe {
+  width: 1900px;
+  height: 1000px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #book-now {
+    padding: 2rem 1rem;
+  }
+  
+  .form-container {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+  
+  .form-container iframe {
+    height: 700px; /* reduce height on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container iframe {
+    height: 600px; /* further reduce height on very small screens */
+  }
+}
+/* CONTACT */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.contact-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  animation: fadeInUp 1s ease both;
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1650px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* LEFT - Contact Info */
+.contact-info {
+  flex: 1;
+  max-width: 550px;
+  padding: 30px;
+  background: #f1fbfd;
+  border-left: 4px solid #31adc6;
+  border-radius: 12px;
+  color: #134d56;
+  box-shadow: 0 4px 20px rgba(49, 173, 198, 0.1);
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #31adc6;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info i {
+  color: #31adc6;
+  font-size: 1.2rem;
+}
+
+/* MIDDLE - Form */
+.contact-form {
+  flex: 1;
+  max-width: 550px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form h3 {
+  font-size: 1.8rem;
+  color: #31adc6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #31adc6;
+  outline: none;
+}
+
+.submit-btn {
+  background: #31adc6;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #269bb1;
+}
+
+.form-success {
+  text-align: center;
+  margin-top: 1rem;
+  background-color: #e6f8f9;
+  padding: 1rem;
+  border: 1px solid #31adc6;
+  border-radius: 8px;
+  color: #22585f;
+  display: none; /* toggle with JS if you add it */
+}
+
+/* RIGHT - Map */
+.map-container {
+  flex: 1;
+  max-width: 550px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: none;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* FOOTER */
+footer {
+  background: #333333;
+  color: #ffff;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+footer a {
+  color: #ffff;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 10px;
+  display: inline-block;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-item {
+    width: 80%;
+    max-width: 400px;
+  }
+}
+@media (max-width: 460px) {
+  .hero-content 
+  {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-left, .hero-right {
+    max-width: 100%;
+    margin: 0 0 30px;
+  }
+  .hero-right {
+    padding: 20px;
+  }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  background: #fff;
+  padding: 40px;
+  max-width: 999px;
+  width: 90%;
+  border-radius: 16px;
+  position: relative;
+  text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 30px rgba(49, 173, 198, 0.4); /* teal glow */
+  border: 3px solid #31ADC6; /* brand accent border */
+  transition: box-shadow 0.3s ease;
+}
+
+.modal:hover {
+  box-shadow: 0 18px 40px rgba(49, 173, 198, 0.7);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  cursor: pointer;
+  color: #31ADC6; /* brand color */
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: #2385a0; /* darker teal on hover */
+}
+
+.modal img.modal-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  margin: 25px 0;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(49, 173, 198, 0.3);
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.checklist li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.checklist li i {
+  color: #28a745; /* brand teal checkmark */
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+/* Book Now Button */
+.book-now-btn {
+  display: inline-block;
+  background: #31ADC6;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 25px;
+  box-shadow: 0 6px 15px rgba(49, 173, 198, 0.5);
+  cursor: pointer;
+  border: none;
+}
+
+.book-now-btn:hover {
+  background: #2385a0; /* darker teal */
+  transform: scale(1.07);
+  box-shadow: 0 9px 22px rgba(35, 133, 160, 0.7);
+}
+
+/* Estimate modal specific styles */
+.estimate-modal-overlay {
+  background: rgba(49, 173, 198, 0.85); /* teal translucent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 9999;
+}
+
+.estimate-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.estimate-modal {
+  background: #f0fbff; /* very light teal tint */
+  border: 4px solid #31ADC6; /* brand teal border */
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  padding: 50px 35px;
+  color: #004080; /* brand navy text */
+  box-shadow: 0 12px 35px rgba(49, 173, 198, 0.45);
+  transform: scale(0.85);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.estimate-modal-overlay.active .estimate-modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.estimate-modal h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+  text-align: center;
+  color: #004080;
+}
+
+.estimate-modal .modal-close {
+  color: #004080;
+  font-size: 2.4rem;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.estimate-modal .modal-close:hover {
+  color: #002855;
+}
+
+/* Style inputs and select inside estimate modal */
+.estimate-modal input,
+.estimate-modal select {
+  width: 100%;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+  border: 2px solid #31ADC6;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.estimate-modal input:focus,
+.estimate-modal select:focus {
+  outline: none;
+  border-color: #2385a0;
+}
+
+/* Style the submit button for spacing if needed */
+.estimate-modal .book-now-btn {
+  margin-bottom: 15px;
+}
+
+/* Terms and conditions text styling */
+.estimate-modal .form-terms {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.estimate-modal .form-terms a {
+  color: #004080;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.estimate-modal .form-terms a:hover {
+  color: #002855;
+}
+
+/* Checkmark animation */
+.checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 4px solid #ffd700; /* gold */
+  position: relative;
+  animation: scaleIn 0.3s ease forwards;
+  margin: 25px auto;
+}
+
+.checkmark::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 35px;
+  width: 20px;
+  height: 40px;
+  border-right: 4px solid #004080;
+  border-bottom: 4px solid #004080;
+  transform: rotate(45deg) scale(0);
+  animation: check 0.4s 0.3s ease forwards;
+}
+
+@keyframes check {
+  to { transform: rotate(45deg) scale(1); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
