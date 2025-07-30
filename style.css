@@ -44,7 +44,7 @@ header {
     padding: 0 40px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   header {
     padding: 0 20px;
   }
@@ -540,7 +540,7 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive adjustments */
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
   .about-section .container {
     flex-direction: column;
     text-align: center;
@@ -610,7 +610,7 @@ nav > ul > li.dropdown {
   margin: 0 auto;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
@@ -979,7 +979,7 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive tweaks */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   #book-now {
     padding: 2rem 1rem;
   }
@@ -994,7 +994,7 @@ nav > ul > li.dropdown {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1200px) {
   .form-container iframe {
     height: 600px; /* further reduce height on very small screens */
   }
@@ -1142,7 +1142,7 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .contact-info,
   .contact-form,
   .map-container {
@@ -1186,7 +1186,7 @@ footer a:hover {
 }
 
 /* Responsive */
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
   .services-grid {
     flex-direction: column;
     align-items: center;
@@ -1196,13 +1196,13 @@ footer a:hover {
     max-width: 400px;
   }
 }
-@media (max-width: 460px) {
+@media (max-width: 1200px) {
   .hero-content 
   {
     font-size: 2.4rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .hero-content {
     flex-direction: column;
     align-items: center;
