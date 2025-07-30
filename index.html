@@ -1,0 +1,393 @@
+<!-- HEADER -->
+<header>
+  <div class="logo">
+  <img src="https://i.imgur.com/HdGezFd.png" alt="Old Dominion Cleaning Company Logo" class="logo-img" />
+</div>
+  <nav>
+  <ul>
+    <li class="dropdown">
+      <a href="#services" class="dropbtn">
+        Services
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none" style="vertical-align: middle; margin-left: 5px;">
+          <path d="M1 1L6 6L11 1" stroke="#ffd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <ul class="dropdown-content services-dropdown">
+  <li><a href="#basic-cleaning">Basic Cleaning</a></li>
+  <li><a href="#standard-cleaning">Standard Cleaning</a></li>
+  <li><a href="#deep-cleaning">Deep Cleaning</a></li>
+  <li><a href="#move-out-cleaning">Move In/Out Cleaning</a></li>
+</ul>
+    </li>
+    <li class="dropdown">
+  <a href="#service-areas" class="dropbtn">
+    Service Areas
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none" style="vertical-align: middle; margin-left: 5px;">
+      <path d="M1 1L6 6L11 1" stroke="#ffd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+ <ul class="dropdown-content areas-dropdown">
+  <li><a href="#richmond">Richmond</a></li>
+  <li><a href="#chesterfield">Chesterfield County</a></li>
+  <li><a href="#henrico">Henrico County</a></li>
+    <!-- <li><a href="#area4">Area 4</a></li> -->
+</ul>
+    </li>
+    <li><a href="#contact-section" class="dropbtn">Contact</a></li>
+    <li>
+      <a href="tel:8045695369" class="call-btn">
+        <i class="fa fa-phone"></i> (804) 569-5369</a>
+    </li>
+    <li><a href="#book-now" class="book-btn">Book Now</a></li>
+
+  </ul>
+</nav>
+</header>
+<!-- Promo Popup -->
+<div id="promo-popup" class="promo-popup">
+  <div class="promo-content">
+    <span id="close-promo">&times;</span>
+    <h3>🎉 20% Off First Deep Clean!</h3>
+    <p>Book now and save 20% on your first deep clean — limited time offer!</p>
+    <a href="#estimate-form" class="promo-button">Claim Your Discount</a>
+  </div>
+</div>
+<!-- Your JavaScript (place this before the closing </body> tag) -->
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.getElementById('promo-popup').style.display = 'flex';
+    }, 3000); // Show after 3 seconds
+
+    document.getElementById('close-promo').addEventListener('click', () => {
+      document.getElementById('promo-popup').style.display = 'none';
+    });
+  });
+</script>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-left">
+      <h1>#1 Trusted Cleaning Experts for Richmond, VA</h1>
+      <p>Top-rated residential and commercial cleaning services in Richmond, VA, and surrounding areas. Whether it’s standard house cleaning, deep cleaning, or move-out cleaning, our professional team leaves every space spotless. Serving homeowners and businesses throughout Richmond with reliable service, transparent pricing, and guaranteed satisfaction</p>
+   <div class="hero-badges">
+  <span class="hero-tag">Fully Licensed</span>
+  <span class="hero-tag">Eco-Friendly</span>
+  <span class="hero-tag">100% Satisfaction Guaranteed</span>
+</div>
+      </div>
+    <div class="hero-right">
+  <h3>Get Your Free Estimate</h3>
+  <form id="hero-estimate-form" action="https://formspree.io/f/mvgqrqkk" method="POST" aria-label="Schedule your free estimate form">
+    <select name="service" required>
+      <option value="">Select a service</option>
+      <option value="basic-cleaning">Basic Cleaning</option>
+      <option value="standard-cleaning">Standard Cleaning</option>
+      <option value="deep-cleaning">Deep Cleaning</option>
+      <option value="move-in-out-cleaning">Move In/Out Cleaning</option>
+    </select>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="address" placeholder="Address" required>
+    <button type="submit" class="book-now-btn">Get Estimate</button>
+
+    <!-- Success Message -->
+    <div class="form-success-message" style="display: none;">
+      <h3>Thank you!</h3>
+      <p>We've received your request. You can now book your cleaning instantly below:</p>
+      <a href="https://bubblescleaningcompany.bookingkoala.com/booknow/home_cleaning" target="_blank" class="book-now-btn">Book Now</a>
+    </div>
+  </form>
+  <p class="form-disclaimer">By submitting this form you agree to our <a href="#">Terms & Conditions</a>.</p>
+</div>
+  </div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("hero-estimate-form");
+    const successMessage = form.querySelector(".form-success-message");
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              form.reset();
+              successMessage.style.display = "block";
+            } else {
+              alert("Oops! Something went wrong. Please try again.");
+            }
+          })
+          .catch(() => {
+            alert("Oops! Something went wrong. Please try again.");
+          });
+      });
+    }
+  });
+</script>
+
+<!-- About Section -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-text">
+      <h1>About Bubbles Cleaning Company RVA</h1>
+      <p>At Bubbles Cleaning Company RVA, we believe a clean home or office creates a better life. Based in Richmond, VA, we provide dependable residential and commercial cleaning services with a personal touch. From standard house cleaning to deep cleaning and move-out cleans, we deliver consistent results you can trust.</p>
+      
+      <h2>Our Mission</h2>
+      <p>We’re on a mission to make cleaning simple and stress-free, giving our clients back their valuable time. Your satisfaction is our top priority – from flexible scheduling to our attention to detail in every clean.</p>
+      
+      <h2>Why Choose Us?</h2>
+      <ul class="about-list">
+        <li><strong>Trusted Professionals:</strong> Our team is reliable, experienced, and fully insured for your peace of mind.</li>
+        <li><strong>Transparent Pricing:</strong> No hidden fees – you’ll always know exactly what to expect.</li>
+        <li><strong>Guaranteed Satisfaction:</strong> We stand behind every clean with our commitment to quality service.</li>
+        <li><strong>Eco-Friendly Practices:</strong> We use safe cleaning products to protect your family and the environment.</li>
+      </ul>
+      
+      <a href="#" id="openEstimateModalBtn" class="about-cta-btn" onclick="openEstimateModal(); return false;">Get Your Free Estimate</a>
+
+
+    </div>
+    
+    <div class="about-images">
+      <img src="https://i.imgur.com/2RQnJca.jpeg" alt="Cleaning Image 1" class="about-img img-top">
+      <img src="https://i.imgur.com/soDesTR.jpeg" alt="Cleaning Image 2" class="about-img img-bottom">
+    </div>
+    
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<!-- SERVICES SECTION -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    
+    <div class="service-card" onclick="openModal('basicCleaning')">
+      <img src="https://i.imgur.com/K3Q54WX.jpeg" alt="Basic Cleaning">
+      <h3>Basic Cleaning</h3>
+      <p><p>A quick and efficient service focused on light upkeep—great for in-between cleanings or maintaining a tidy space with minimal effort.</p>
+</p>
+      <button class="learn-more-btn">Learn More</button>
+    </div>
+    
+    <div class="service-card" onclick="openModal('standardCleaning')">
+      <img src="https://i.imgur.com/956lJca.png" alt="Standard Cleaning">
+      <h3>Standard Cleaning</h3>
+      <p>Reliable and thorough home cleaning services tailored to your needs. We focus on daily upkeep tasks like dusting, vacuuming, and sanitizing to keep your home fresh and inviting.</p>
+      <button class="learn-more-btn">Learn More</button>
+    </div>
+    
+    <div class="service-card" onclick="openModal('deepCleaning')">
+      <img src="https://i.imgur.com/cgnYdyQ.jpeg" alt="Deep Cleaning">
+      <h3>Deep Cleaning</h3>
+      <p>Comprehensive deep cleaning that targets every nook and cranny. Perfect for seasonal refreshes or special occasions, this service includes detailed scrubbing, baseboard cleaning, and more.</p>
+      <button class="learn-more-btn">Learn More</button>
+    </div>
+    
+    <div class="service-card" onclick="openModal('moveInOutCleaning')">
+      <img src="https://i.imgur.com/NdasCrK.jpeg" alt="Move In/Out Cleaning">
+      <h3>Move In/Out Cleaning</h3>
+      <p>Ensure your property is spotless for your move. Our detailed move in/out cleaning covers all surfaces, appliances, and corners to make your transition smooth and stress-free.</p>
+      <button class="learn-more-btn">Learn More</button>
+    </div>
+  
+  </div>
+</section>
+
+<!-- Font Awesome CDN (include in your <head> or above checklist) -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  crossorigin="anonymous"
+/>
+
+<!-- CheckList Section -->
+<section id="checklist">
+  <h1>Cleaning Checklist Comparison</h1>
+  <div id="checklistTableContainer"></div>
+</section>
+
+<!-- Service Areas Section -->
+<section id="service-areas" class="service-areas">
+  <h2>Service Areas</h2>
+  <div class="areas-grid">
+    <div class="area-box" onclick="openAreaModal('richmond')">
+      <img src="https://i.imgur.com/kO42yMy.jpeg" alt="Richmond">
+      <h3>Richmond</h3>
+    </div>
+    <div class="area-box" onclick="openAreaModal('chesterfield')">
+      <img src="https://i.imgur.com/0BTuhY0.jpeg" alt="Chesterfield County">
+      <h3>Chesterfield County</h3>
+    </div>
+    <div class="area-box" onclick="openAreaModal('henrico')">
+      <img src="https://i.imgur.com/XbAvdjY.jpeg" alt="Henrico County">
+      <h3>Henrico County</h3>
+    </div>
+  </div>
+</section>
+<!-- booking-->
+<div id="bookingkoala-embed-container"></div>
+<section id="book-now">
+  <div class="form-container">
+  <iframe 
+      src="https://bubblescleaningcompany.bookingkoala.com/booknow/home_cleaning?embed=true&bar=false" 
+      scrolling="no">
+    </iframe>
+    <script src="https://bubblescleaningcompany.bookingkoala.com/resources/embed.js" defer></script>
+  </div>
+</section>
+
+
+<!-- Modal -->
+<div id="areaModal" class="area-modal-overlay" hidden>
+  <div class="area-modal">
+    <button onclick="closeAreaModal()" class="area-modal-close">&times;</button>
+    <div id="areaModalContent"></div>
+  </div>
+</div>
+
+<section id="contact-section" class="contact-section">
+  <div class="contact-wrapper">
+
+    <!-- LEFT: Contact Info -->
+    <div class="contact-info">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-envelope"></i> info@bubblescleaningrva.com</p>
+      <p><i class="fas fa-phone-alt"></i> (804) 569-5369</p>
+      <p><i class="fas fa-map-marker-alt"></i> Richmond, VA</p>
+    </div>
+
+    <!-- MIDDLE: Contact Form -->
+    <form id="contact-form" class="contact-form" action="https://formspree.io/f/mvgqrqkk" method="POST" novalidate>
+  <h3>Send a Message</h3>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required placeholder="Your full name" />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="_replyto" id="email" required placeholder="Your email address" />
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" name="phone" id="phone" required placeholder="Your phone number" />
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea name="message" id="message" rows="5" required placeholder="Your message..."></textarea>
+  </div>
+
+  <button type="submit" class="submit-btn">Send</button>
+
+  <p id="form-success" class="form-success" style="display:none;">
+    ✅ Thank you! Your message has been received. Please allow some time for us to respond.
+  </p>
+</form>
+    <!-- RIGHT: Map -->
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.3311572441986!2d-77.46053968432318!3d37.5535867797987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b1113fc4206b5d%3A0x1a5e44f58fa0f7ab!2sRichmond%2C%20VA!5e0!3m2!1sen!2sus!4v1599999999999"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Google Map of Richmond, VA">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+  <script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    const form = e.target;
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      form.reportValidity(); // Triggers browser validation messages
+      return;
+    }
+
+    e.preventDefault(); // Stop actual form submission temporarily
+
+    // Send form data to Formspree
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        form.reset(); // Clear the form
+        form.querySelector('.submit-btn').style.display = 'none'; // Hide button
+        document.getElementById('form-success').style.display = 'block'; // Show message
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    }).catch(error => {
+      alert("There was a problem submitting the form. Please try again later.");
+    });
+  });
+</script>
+
+<!-- MODAL -->
+<!--<div id="modalOverlay" class="modal-overlay">
+  <div class="modal">
+    <div id="modalContent">
+      <!-- Dynamic content will be injected here -->
+  <!--  </div>
+  </div>
+</div>-->
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Bubbles Cleaning Company. All rights reserved.</p>
+  <p>
+    <a href="tel:+18045695369"><i class="fa fa-phone"></i> +1 (804) 569-5369</a> |
+    <a href="mailto:info@olddominioncleaning.com"><i class="fa fa-envelope"></i> info@bubblescleaningrva.com</a>
+  </p>
+
+</footer>
+ 
+<!-- MODAL OVERLAY -->
+<div id="modalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" tabindex="-1" hidden>
+  <div class="modal" role="document">
+    <button id="modalCloseBtn" class="modal-close" aria-label="Close modal">&times;</button>
+    <div id="modalContent">
+      <!-- Modal content will be injected here dynamically by JS -->
+    </div>
+
+  </div>
+</div>
+<!--ABOUT US MODAL-->
+<div id="estimateModalOverlay" class="estimate-modal-overlay" hidden>
+  <div class="estimate-modal" id="estimateModalContent">
+    <button class="modal-close" id="estimateModalCloseBtn">&times;</button>
+    <h2>Get Your Free Estimate</h2>
+    <form id="modal-estimate-form"
+      action="https://formspree.io/f/mvgqrqkk" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <select name="service" required>
+        <option value="">Select a service</option>
+        <option value="basic-cleaning">Basic Cleaning</option>
+        <option value="standard-cleaning">Standard Cleaning</option>
+        <option value="deep-cleaning">Deep Cleaning</option>
+        <option value="move-in-out-cleaning">Move In/Out Cleaning</option>
+      </select>
+      <button type="submit" class="book-now-btn">Get Estimate</button>
+    </form>
+    <p class="form-terms">By submitting this form you agree to our <a href="#">Terms & Conditions</a>.</p>
+  </div>
+</div>
