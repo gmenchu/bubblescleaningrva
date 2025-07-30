@@ -544,6 +544,7 @@ nav > ul > li.dropdown {
   .about-section .container {
     flex-direction: column;
     text-align: center;
+    max-width: 100%
   }
   .about-text {
     text-align: center;
