@@ -949,12 +949,12 @@ nav > ul > li.dropdown {
   background: #ffff;
   border-top: 3px solid #31adc6;
   border-bottom: 3px solid #31adc6;
-  max-width: 2200px;
+  max-width: 1700px;
 }
 
 .form-container {
   width: 100vw;
-  max-width: 1900px;  /* Limit max width for better readability */
+  max-width: 1700px;  /* Limit max width for better readability */
   margin: 0 auto;
   /*padding: 1rem;*/
   background: white;
@@ -972,7 +972,7 @@ nav > ul > li.dropdown {
 }
 
 .form-container iframe {
-  width: 1900px;
+  width: 1700px;
   height: 1000px;
   border: none;
   border-radius: 8px;
@@ -1449,4 +1449,53 @@ footer a:hover {
 @keyframes scaleIn {
   from { transform: scale(0); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  header, nav, .hero, .about, .services, .testimonials, .contact, .footer {
+    padding: 1rem;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-left, .hero-right,
+  .about-content, .services-container,
+  .testimonial, .contact form {
+    width: 100%;
+  }
+
+  .service-card {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .promo-popup .promo-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  iframe {
+    width: 100%;
+    height: 600px;
+  }
+
+  button {
+    width: 100%;
+    padding: 1rem;
+  }
 }
