@@ -1142,13 +1142,16 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .contact-info,
   .contact-form,
   .map-container {
     max-width: 100%;
     padding: 20px;
     margin-bottom: 20px;
+  }
+  .contact-wrapper {
+    max-width: 100%
   }
 
   .contact-form h3,
@@ -1158,7 +1161,7 @@ nav > ul > li.dropdown {
   }
 
   .map-container iframe {
-    min-height: 300px;
+    height: 300px;
   }
 
   .contact-section {
