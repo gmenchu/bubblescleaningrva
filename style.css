@@ -540,10 +540,11 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive adjustments */
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
   .about-section .container {
     flex-direction: column;
     text-align: center;
+    padding: 0 40px;
   }
   .about-text {
     text-align: center;
@@ -610,10 +611,11 @@ nav > ul > li.dropdown {
   margin: 0 auto;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
+    padding: 0 40px;
   }
 
   .services-grid .service-card:nth-child(4) {
