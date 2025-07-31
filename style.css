@@ -765,7 +765,7 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive */
-/*@media (max-width: 768px) {
+@media (max-width: 768px) {
   #checklistTable,
   #checklistTable thead,
   #checklistTable tbody,
@@ -774,7 +774,6 @@ nav > ul > li.dropdown {
   #checklistTable tr {
     display: block;
   }
-*/
   #checklistTable tr {
     margin-bottom: 20px;
   }
