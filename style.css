@@ -979,7 +979,7 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive tweaks */
-/*@media (max-width: 480px) {
+@media (max-width: 480px) {
   #book-now {
     padding: 2rem 1rem;
   }
@@ -991,13 +991,13 @@ nav > ul > li.dropdown {
   
   .form-container iframe {
     height: 700px; /* reduce height on smaller screens */
-/*  }
+  }
 }
 
 @media (max-width: 480px) {
   .form-container iframe {
     height: 600px; /* further reduce height on very small screens */
-/*  }
+  }
 }
 @media (max-width: 480px) {
   .form-container {
