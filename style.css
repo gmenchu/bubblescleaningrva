@@ -953,7 +953,7 @@ nav > ul > li.dropdown {
 }
 
 .form-container {
-  width: 100vw;
+  width: 100%;
   max-width: 1700px;  /* Limit max width for better readability */
   margin: 0 auto;
   /*padding: 1rem;*/
@@ -979,7 +979,7 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive tweaks */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   #book-now {
     padding: 2rem 1rem;
   }
@@ -997,6 +997,10 @@ nav > ul > li.dropdown {
 @media (max-width: 480px) {
   .form-container iframe {
     height: 600px; /* further reduce height on very small screens */
+  }
+}
+@media (max-width: 480px) {
+  .form-container {
   }
 }
 /* CONTACT */
