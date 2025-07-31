@@ -44,7 +44,7 @@ header {
     padding: 0 40px;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 600px) {
   header {
     padding: 0 20px;
   }
@@ -540,11 +540,10 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive adjustments */
-@media (max-width: 1200px) {
+@media (max-width: 960px) {
   .about-section .container {
     flex-direction: column;
     text-align: center;
-    max-width: 100%
   }
   .about-text {
     text-align: center;
@@ -611,7 +610,7 @@ nav > ul > li.dropdown {
   margin: 0 auto;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
@@ -980,7 +979,7 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive tweaks */
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   #book-now {
     padding: 2rem 1rem;
   }
@@ -995,7 +994,7 @@ nav > ul > li.dropdown {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 480px) {
   .form-container iframe {
     height: 600px; /* further reduce height on very small screens */
   }
@@ -1143,26 +1142,10 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
-  .contact-info,
-  .contact-form,
-  .map-container {
-    max-width: 100%;
-    padding: 20px;
-    margin-bottom: 20px;
-    height: 300px;
-  }
+/*@media (max-width: 1100px) {
   .contact-wrapper {
-    max-width: 100%
-  }
-
-  .contact-form h3,
-  .contact-info h3 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  .contact-section {
-    padding: 40px 15px;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -1187,7 +1170,7 @@ footer a:hover {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 960px) {
   .services-grid {
     flex-direction: column;
     align-items: center;
@@ -1197,13 +1180,13 @@ footer a:hover {
     max-width: 400px;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 460px) {
   .hero-content 
   {
     font-size: 2.4rem;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
     align-items: center;
@@ -1466,4 +1449,93 @@ footer a:hover {
 @keyframes scaleIn {
   from { transform: scale(0); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+/* ===== MOBILE STYLES ===== */
+/* --- Mobile Optimizations --- */
+@media (max-width: 768px) {
+  /* CONTACT SECTION STACKING */
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .contact-info,
+  .contact-form,
+  .map-container {
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .map-container iframe {
+    min-height: 300px;
+  }
+
+  /* FORM FIELD ADJUSTMENTS */
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  /* HERO SECTION */
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .hero-left,
+  .hero-right {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .hero-right {
+    padding: 10px;
+  }
+
+  /* MODAL */
+  .modal {
+    padding: 25px 20px;
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .modal img.modal-image {
+    max-width: 100%;
+  }
+
+  .estimate-modal {
+    padding: 35px 20px;
+    width: 95%;
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    padding: 0 10px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 30px 10px;
+    font-size: 0.85rem;
+  }
+
+  footer a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  /* Buttons */
+  .book-now-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
 }
