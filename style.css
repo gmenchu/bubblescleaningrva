@@ -540,7 +540,7 @@ nav > ul > li.dropdown {
 }
 
 /* Responsive adjustments */
-/*@media (max-width: 1200px) {
+@media (max-width: 1200px) {
   .about-section .container {
     flex-direction: column;
     text-align: center;
@@ -560,7 +560,7 @@ nav > ul > li.dropdown {
   }
 }
 
-/*@media (max-width: 600px) {
+@media (max-width: 600px) {
   .about-images {
     flex-direction: column;
     gap: 20px;
@@ -568,7 +568,7 @@ nav > ul > li.dropdown {
   .img-top, .img-bottom {
     max-width: 100%;
   }
-}*/
+}
 .about-cta-btn {
   display: inline-block;
   background: #31ADC6; /* Brand color CTA */
