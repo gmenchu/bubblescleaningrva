@@ -287,14 +287,14 @@ nav > ul > li.dropdown {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
-  margin-top: 85px; /* accounts for fixed header height */
+  padding: 2.5rem 1.25rem;
+  margin-top: 5.3rem; /* fixed header height */
 }
 
 .hero::after {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 64, 128, 0.6); /* Navy overlay with 60% opacity */
+  background-color: rgba(0, 64, 128, 0.6);
   z-index: 1;
 }
 
@@ -304,56 +304,58 @@ nav > ul > li.dropdown {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 100px;
-  max-width: 1600px;
+  flex-wrap: wrap;
+  gap: 5rem;
+  max-width: 100rem;
   width: 100%;
   margin: 0 auto;
-  padding: 70px;
+  padding: 4.5rem;
   color: #fff;
   background-color: rgba(0, 64, 128, 0.6);
-  border-radius: 40px;
+  border-radius: 2.5rem;
   font-size: 1.2rem;
 }
 
 .hero-left {
   flex: 1;
-  max-width: 700px;
-  margin-right: 40px;
+  max-width: 43.75rem;
+  margin-right: 2rem;
 }
 
 .hero-left h1 {
-  font-size: 4.1rem;
+  font-size: 4rem;
   line-height: 1.1;
   font-weight: 700;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-  color: #ffff; /* Brand color for strong hero title */
+  margin-bottom: 1.25rem;
+  text-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.6);
+  color: #fff;
 }
 
 .hero-left p {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.4;
-  margin-bottom: 30px;
-  max-width: 600px;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-  color: #e6f7fb; /* softer brand-tinted text */
+  margin-bottom: 2rem;
+  max-width: 37.5rem;
+  text-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.5);
+  color: #e6f7fb;
 }
+
 .hero-badges {
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
   flex-wrap: wrap;
-  justify-content: left;
-  margin-top: 20px;
+  justify-content: flex-start;
+  margin-top: 1.25rem;
 }
 
 .hero-tag {
   background-color: #ffffffcc;
   color: #004080;
-  padding: 10px 18px;
-  border-radius: 25px;
+  padding: 0.625rem 1.125rem;
+  border-radius: 1.5625rem;
   font-weight: 600;
   font-size: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 0.125rem 0.375rem rgba(0,0,0,0.2);
   transition: transform 0.2s ease;
   border: 1px solid #dce3f0;
 }
@@ -364,69 +366,58 @@ nav > ul > li.dropdown {
 
 .hero-right {
   flex: 1;
-  max-width: 500px;
-  background: #ffffffcc; /* White with slight transparency */
-  padding: 60px 30px;
-  border-radius: 30px;
+  max-width: 31.25rem;
+  background: #ffffffcc;
+  padding: 3.75rem 2rem;
+  border-radius: 1.875rem;
   color: #004080;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,0.1);
 }
 
 .hero-right h2,
 .hero-right p {
   color: #004080;
-  text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .hero-right .checkmark {
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
-  display: inline-block;
-  border: 4px solid #ffd700;
+  border: 0.25rem solid #ffd700;
   position: relative;
   animation: scaleIn 0.3s ease forwards;
-  margin: 20px auto;
+  margin: 1.25rem auto;
 }
 
 .hero-right .checkmark::after {
   content: '';
   position: absolute;
-  left: 20px;
-  top: 35px;
-  width: 20px;
-  height: 40px;
-  border-right: 4px solid #004080;
-  border-bottom: 4px solid #004080;
+  left: 1.25rem;
+  top: 2.2rem;
+  width: 1.25rem;
+  height: 2.5rem;
+  border-right: 0.25rem solid #004080;
+  border-bottom: 0.25rem solid #004080;
   transform: rotate(45deg) scale(0);
   animation: check 0.4s 0.3s ease forwards;
-}
-
-@keyframes check {
-  to { transform: rotate(45deg) scale(1); }
-}
-
-@keyframes scaleIn {
-  from { transform: scale(0); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
 }
 
 .hero-right h3 {
   font-size: 2rem;
   font-weight: 700;
   color: #004080;
-  margin-bottom: 25px;
+  margin-bottom: 1.5rem;
 }
 
 .hero-right select,
 .hero-right input,
 .hero-right button {
   width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3125rem;
   border: none;
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
@@ -439,44 +430,42 @@ nav > ul > li.dropdown {
   border-radius: 90px;
   cursor: pointer;
   transition: background 0.3s ease;
-  box-shadow: 0 4px 10px rgba(49, 173, 198, 0.6);
+  box-shadow: 0 0.25rem 0.625rem rgba(49, 173, 198, 0.6);
 }
 
 .hero-right button:hover {
   background: #ffbf00;
 }
 
-/* Form disclaimer styling - outside hero-right block */
 .form-disclaimer {
   font-size: 0.75rem;
   color: #666;
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 
 .form-disclaimer a {
   color: #004080;
   text-decoration: underline;
 }
-/* Success message container inside hero-right */
+
 .hero-right .form-success-message {
   display: none;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   color: #004080;
   font-weight: 600;
   text-align: center;
   animation: fadeIn 0.5s ease forwards;
 }
 
-/* Reuse your existing button styles for the success button/link */
 .hero-right .form-success-message .book-now-btn {
-  margin-top: 15px;
+  margin-top: 1rem;
   display: inline-block;
   background: #31ADC6;
   color: white;
-  padding: 12px 30px;
+  padding: 0.75rem 1.875rem;
   border-radius: 90px;
   font-weight: 700;
-  box-shadow: 0 4px 10px rgba(49, 173, 198, 0.6);
+  box-shadow: 0 0.25rem 0.625rem rgba(49, 173, 198, 0.6);
   transition: background 0.3s ease;
   text-decoration: none;
   cursor: pointer;
@@ -486,16 +475,98 @@ nav > ul > li.dropdown {
   background: #ffbf00;
 }
 
-/* Fade-in animation for the success message */
+/* Animations */
+@keyframes check {
+  to { transform: rotate(45deg) scale(1); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem;
+  }
+
+  .hero-left, .hero-right {
+    max-width: 100%;
+  }
+
+  .hero-left h1 {
+    font-size: 3rem;
+  }
+
+  .hero-left p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .hero-left h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-left p {
+    font-size: 1.1rem;
+  }
+
+  .hero-right {
+    padding: 2rem 1.25rem;
+  }
+
+  .hero-tag {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-left p {
+    font-size: 1rem;
+  }
+
+  .hero-content {
+    padding: 1.25rem;
+  }
+
+  .hero-right button,
+  .hero-right input,
+  .hero-right select {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.9rem;
+  }
+
+  .hero-tag {
+    font-size: 0.85rem;
+  }
+}
 
 /* ABOUT SECTION */
 .about-section {
-  padding: 80px 20px;
-  background: #f8fdff; /* Light brand-tinted background for a clean feel */
+  padding: 5rem 1.25rem;
+  background: #f8fdff;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -503,41 +574,41 @@ nav > ul > li.dropdown {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 1400px;
-  padding: 0 40px;
+  max-width: 87.5rem; /* 1400px */
+  padding: 0 2.5rem;
   margin: 0 auto;
-  gap: 40px;
+  gap: 2.5rem;
+  flex-wrap: wrap;
 }
 
 .about-text {
   flex: 1;
-  color: #004080; /* Deep navy for strong readable text */
-  max-width: 700px;
+  color: #004080;
+  max-width: 43.75rem; /* 700px */
   margin: 0 auto;
-  padding: 40px 30px;
+  padding: 2.5rem 1.875rem;
   text-align: left;
 }
 
 .about-text h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.2;
   text-align: center;
-  margin-bottom: 20px;
-  color: #31ADC6; /* Brand color for main about title */
+  margin-bottom: 1.25rem;
+  color: #31ADC6;
 }
 
 .about-text h2 {
-  font-size: 1.8rem;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  color: #004080; /* Keeps section headings distinct and readable */
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  margin: 1.875rem 0 0.9375rem;
+  color: #004080;
 }
 
 .about-text p {
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 20px;
-  color: #333; /* Neutral dark for body text */
+  margin-bottom: 1.25rem;
+  color: #333;
 }
 
 .about-list {
@@ -546,36 +617,55 @@ nav > ul > li.dropdown {
 }
 
 .about-list li {
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
   font-size: 1.05rem;
 }
 
 .about-list li strong {
-  color: #31ADC6; /* Brand color highlights within lists */
+  color: #31ADC6;
 }
 
 .about-images {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 1.875rem;
 }
 
 .about-img {
   width: 100%;
-  max-width: 450px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 28.125rem; /* 450px */
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
 }
 
 .img-top {
   align-self: flex-start;
-  transform: translate(50px, 100px); /* adjust as desired for stylish offset */
+  transform: translate(3.125rem, 6.25rem); /* 50px, 100px */
 }
 
 .img-bottom {
   align-self: flex-end;
-  transform: translate(50px, 100px);
+  transform: translate(3.125rem, 6.25rem);
+}
+
+.about-cta-btn {
+  display: inline-block;
+  background: #31ADC6;
+  color: white;
+  padding: 0.875rem 2.5rem;
+  border-radius: 3.125rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-top: 1.875rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
+}
+
+.about-cta-btn:hover {
+  background: #2385a0;
+  transform: scale(1.05);
 }
 
 /* Responsive adjustments */
@@ -583,7 +673,7 @@ nav > ul > li.dropdown {
   .about-section .container {
     flex-direction: column;
     text-align: center;
-    padding: 0 40px;
+    padding: 0 2.5rem;
   }
   .about-text {
     text-align: center;
@@ -595,81 +685,65 @@ nav > ul > li.dropdown {
   .img-top, .img-bottom {
     align-self: center;
     max-width: 45%;
-    transform: none; /* remove transform on small screens */
+    transform: none;
   }
 }
 
 @media (max-width: 600px) {
   .about-images {
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
   }
   .img-top, .img-bottom {
     max-width: 100%;
   }
 }
-.about-cta-btn {
-  display: inline-block;
-  background: #31ADC6; /* Brand color CTA */
-  color: white;
-  padding: 14px 40px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1.2rem;
-  text-decoration: none;
-  margin-top: 30px;
-  transition: background 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.about-cta-btn:hover {
-  background: #2385a0; /* Slightly darker shade for hover effect */
-  transform: scale(1.05);
-}
 
 /* SERVICES SECTION */
 #services {
-  padding: 80px 20px;
-  background: #e6f7fb; /* Light background for services section to contrast brand elements */
+  padding: 5rem 1.25rem; /* 80px → 5rem, 20px → 1.25rem */
+  background: #e6f7fb;
   text-align: center;
 }
 
 #services h2 {
-  font-size: 2.8rem;
+  font-size: clamp(1.8rem, 5vw, 2.8rem); /* scales better across screen sizes */
   font-weight: 700;
-  color: #31ADC6; /* Brand color for the section title */
-  margin-bottom: 50px;
+  color: #31ADC6;
+  margin-bottom: 3rem;
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
+  gap: 2rem;
+  max-width: 75rem; /* 1200px → 75rem */
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75rem) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
-    padding: 0 40px;
+    padding: 0 2rem;
   }
+
   .services-grid .service-card:nth-child(4) {
-    grid-column: 2; /* centers the fourth card below the top three */
+    grid-column: 2;
   }
 }
 
 .service-card {
   background: white;
-  border-radius: 12px;
-  padding: 30px;
+  border-radius: 0.75rem; /* 12px */
+  padding: 2rem;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid #31ADC6; /* thin blue border */
-  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5); /* glow effect */
+  border: 2px solid #31ADC6;
+  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5);
 }
 
 .service-card:hover {
@@ -679,31 +753,31 @@ nav > ul > li.dropdown {
 
 .service-card img {
   width: 100%;
-  height: 200px;
+  height: 12.5rem; /* 200px */
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  border-radius: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .service-card h3 {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-  color: #004080; /* Deep blue for titles within cards for clear hierarchy */
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #004080;
   font-weight: 700;
 }
 
 .service-card p {
   font-size: 1rem;
-  color: #555; /* Slightly darker for readability */
+  color: #555;
 }
 
 .learn-more-btn {
   display: inline-block;
-  margin-top: 15px;
-  background: #31ADC6; /* Brand color CTA button */
+  margin-top: 1rem;
+  background: #31ADC6;
   color: white;
-  padding: 10px 25px;
-  border-radius: 50px;
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
   border: none;
   font-weight: 700;
   text-decoration: none;
@@ -712,53 +786,53 @@ nav > ul > li.dropdown {
 }
 
 .learn-more-btn:hover {
-  background: #2385a0; /* Slightly darker shade for hover */
+  background: #2385a0;
 }
 
-/* Service Modal Styles */
-
+/* MODAL SECTION */
 .service-modal {
   background: white;
-  max-width: 1000px;
+  max-width: 62.5rem; /* 1000px */
   width: 90%;
-  border-radius: 12px;
-  padding: 50px;
+  border-radius: 0.75rem;
+  padding: 3rem;
   position: relative;
   text-align: left;
   max-height: 90vh;
   overflow-y: auto;
-   border: 2px solid #31ADC6; /* thin blue border */
-  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5); /* glow effect */
+  border: 2px solid #31ADC6;
+  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5);
 }
+
 .service-modal h2 {
-  font-size: 2.5rem;
-  margin-bottom: 25px;
-  color: #31ADC6; /* Brand color in modal titles */
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  color: #31ADC6;
 }
 
 .service-modal p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: 1.125rem;
+  margin-bottom: 1.25rem;
   color: #444;
 }
 
 .service-modal ul li {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
 }
 
 /* === Checklist Grid Section === */
 #checklist {
-  background-color: #f8fdff; /* Very light tint of brand color for subtle section background */
-  padding: 80px 20px;
+  background-color: #f8fdff;
+  padding: 5rem 1.25rem; /* 80px → 5rem, 20px → 1.25rem */
 }
 
 #checklist h1 {
   text-align: center;
   margin-top: 0;
-  margin-bottom: 50px;
-  font-size: 2.8rem;
-  color: #31ADC6; /* Brand color for the title */
+  margin-bottom: 3rem; /* 50px → 3rem */
+  font-size: 2.5rem; /* Slightly reduced for better scaling */
+  color: #31ADC6;
 }
 
 /* Checklist Table */
@@ -767,15 +841,16 @@ nav > ul > li.dropdown {
   border-collapse: collapse;
   table-layout: fixed;
   background: white;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.05); /* 8px, 20px → rem */
 }
 
 #checklistTable th,
 #checklistTable td {
   border: 1px solid #ddd;
-  padding: 15px;
+  padding: 1rem;
   vertical-align: top;
   word-wrap: break-word;
+  font-size: 0.95rem;
 }
 
 #checklistTable th {
@@ -787,22 +862,22 @@ nav > ul > li.dropdown {
 .area-name {
   background-color: #e6f7fb;
   font-weight: 600;
-  width: 180px;
+  width: 11rem; /* 180px → 11.25rem, rounded */
   color: #004080;
 }
 
 .checklist-item {
-  margin-bottom: 8px;
-  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
 }
 
 .checklist-item i {
-  color: #28a745; /* Green checkmark */
-  margin-right: 6px;
-  font-size: 14px;
+  color: #28a745;
+  margin-right: 0.375rem;
+  font-size: 0.85rem;
 }
 
-/* Responsive */
+/* Responsive Table → Stack for Small Screens */
 @media (max-width: 768px) {
   #checklistTable,
   #checklistTable thead,
@@ -812,40 +887,31 @@ nav > ul > li.dropdown {
   #checklistTable tr {
     display: block;
   }
+
   #checklistTable tr {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   #checklistTable td {
     padding-left: 50%;
     position: relative;
+    font-size: 1rem;
   }
 
   #checklistTable td::before {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 1rem;
+    left: 1rem;
     width: 45%;
     white-space: nowrap;
     font-weight: bold;
     color: #31ADC6;
   }
 
-  #checklistTable td:nth-of-type(1)::before {
-    content: "Area";
-  }
-
-  #checklistTable td:nth-of-type(2)::before {
-    content: "Standard Cleaning";
-  }
-
-  #checklistTable td:nth-of-type(3)::before {
-    content: "Deep Cleaning";
-  }
-
-  #checklistTable td:nth-of-type(4)::before {
-    content: "Move In/Out Cleaning";
-  }
+  #checklistTable td:nth-of-type(1)::before { content: "Area"; }
+  #checklistTable td:nth-of-type(2)::before { content: "Standard Cleaning"; }
+  #checklistTable td:nth-of-type(3)::before { content: "Deep Cleaning"; }
+  #checklistTable td:nth-of-type(4)::before { content: "Move In/Out Cleaning"; }
 
   #checklistTable th {
     display: none;
@@ -860,68 +926,66 @@ nav > ul > li.dropdown {
 
 /* Service Areas Section */
 .service-areas {
-  padding: 80px 20px;
+  padding: 5rem 1.25rem;
   text-align: center;
-  background: #e6f7fb; /* Light tint of brand color for subtle, professional background */
+  background: #e6f7fb;
 }
 
 .service-areas h2 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #31ADC6; /* Brand color for the title */
-  margin-bottom: 50px;
+  color: #31ADC6;
+  margin-bottom: 3rem;
 }
 
 .areas-grid {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 2rem;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .area-box {
   background: white;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 400px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  border: 2px solid #31ADC6; /* thin blue border */
-  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5); /* glow effect */
+  width: 100%;
+  max-width: 25rem;
+  border: 2px solid #31ADC6;
+  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5);
 }
 
 .area-box img {
   width: 100%;
-  height: 260px;
+  height: auto;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
 .area-box h3 {
   margin: 0;
-  padding: 20px;
-  font-size: 1.6rem;
-  color: #004080; /* Deep blue for strong readability */
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  color: #004080;
   background: #ffffff;
   font-weight: 700;
 }
-.area-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 16px 30px rgba(0,0,0,0.15);
-}
 
-/* Optional: Add a thin brand-colored border on hover for visual feedback */
 .area-box:hover {
-  border: 2px solid #31ADC6;
+  transform: translateY(-0.625rem);
+  box-shadow: 0 1rem 1.875rem rgba(0, 0, 0, 0.15);
 }
 
 /* Modal Styles */
 .area-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -938,21 +1002,22 @@ nav > ul > li.dropdown {
 
 .area-modal {
   background: white;
-  max-width: 1000px;
   width: 90%;
-  border-radius: 12px;
-  padding: 50px;
+  max-width: 62.5rem;
+  border-radius: 0.75rem;
+  padding: 3rem 2rem;
   position: relative;
   text-align: left;
   max-height: 90vh;
   overflow-y: auto;
-  border: 2px solid #31ADC6; /* thin blue border */
-  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5); /* glow effect */
+  border: 2px solid #31ADC6;
+  box-shadow: 0 0 20px rgba(49, 173, 198, 0.5);
 }
 
 .area-modal-close {
   position: absolute;
-  top: 10px; right: 15px;
+  top: 0.625rem;
+  right: 0.9375rem;
   background: none;
   border: none;
   font-size: 2rem;
@@ -961,14 +1026,14 @@ nav > ul > li.dropdown {
 }
 
 .area-modal h2 {
-  font-size: 2.5rem;
-  margin-bottom: 25px;
-  color: #31ADC6; /* Brand color in modal titles */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #31ADC6;
 }
 
 .area-modal p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
   color: #444;
 }
 
@@ -978,69 +1043,126 @@ nav > ul > li.dropdown {
 }
 
 .area-modal li {
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .service-areas h2 {
+    font-size: 2rem;
+  }
+
+  .area-box h3 {
+    font-size: 1.1rem;
+  }
+
+  .area-modal {
+    padding: 2rem 1.25rem;
+  }
+
+  .area-modal h2 {
+    font-size: 1.5rem;
+  }
+
+  .area-modal p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .areas-grid {
+    gap: 1.5rem;
+  }
+
+  .area-box {
+    max-width: 100%;
+  }
+
+  .area-box img {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 /* === Booking Form Section === */
 #book-now {
-  /*padding: 4rem 2rem;*/
-  background: #ffff;
+  background: #fff;
   border-top: 3px solid #31adc6;
   border-bottom: 3px solid #31adc6;
   max-width: 1700px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
 .form-container {
   width: 100%;
-  max-width: 1700px;  /* Limit max width for better readability */
+  max-width: 100%; /* Allow container to shrink on smaller screens */
   margin: 0 auto;
-  /*padding: 1rem;*/
   background: white;
-  /*border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);*/
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .form-container h2 {
   font-size: 2rem;
-  color: #ffff;
+  color: #004080; /* Adjusted from #ffff (white) so heading is visible */
   text-align: center;
   margin-bottom: 2rem;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
+/* Make iframe scale responsively */
 .form-container iframe {
-  width: 1700px;
-  height: 1000px;
+  width: 100%;
+  height: 80vh; /* Responsive height based on viewport height */
+  max-height: 1000px; /* Optional max height */
   border: none;
   border-radius: 8px;
+  display: block;
+  box-sizing: border-box;
 }
 
 /* Responsive tweaks */
-@media (max-width: 480px) {
+@media (max-width: 1200px) {
+  #book-now {
+    padding: 3rem 1.5rem;
+  }
+  
+  .form-container {
+    padding: 0.75rem;
+  }
+  
+  .form-container iframe {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
   #book-now {
     padding: 2rem 1rem;
   }
   
-  .form-container {
-    max-width: 100%;
-    padding: 0.5rem;
+  .form-container h2 {
+    font-size: 1.6rem;
   }
   
   .form-container iframe {
-    height: 700px; /* reduce height on smaller screens */
+    height: 60vh;
   }
 }
 
 @media (max-width: 480px) {
+  .form-container h2 {
+    font-size: 1.4rem;
+  }
+  
   .form-container iframe {
-    height: 600px; /* further reduce height on very small screens */
+    height: 50vh;
   }
 }
-@media (max-width: 480px) {
-  .form-container {
-  }
-}
+
 /* CONTACT */
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(20px); }
@@ -1064,7 +1186,7 @@ nav > ul > li.dropdown {
 
 /* LEFT - Contact Info */
 .contact-info {
-  flex: 1;
+  flex: 1 1 350px;
   max-width: 550px;
   padding: 30px;
   background: #f1fbfd;
@@ -1072,6 +1194,7 @@ nav > ul > li.dropdown {
   border-radius: 12px;
   color: #134d56;
   box-shadow: 0 4px 20px rgba(49, 173, 198, 0.1);
+  box-sizing: border-box;
 }
 
 .contact-info h3 {
@@ -1095,12 +1218,13 @@ nav > ul > li.dropdown {
 
 /* MIDDLE - Form */
 .contact-form {
-  flex: 1;
+  flex: 1 1 350px;
   max-width: 550px;
   background: white;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
 }
 
 .contact-form h3 {
@@ -1129,6 +1253,7 @@ nav > ul > li.dropdown {
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
+  resize: vertical;
 }
 
 .form-group input:focus,
@@ -1167,11 +1292,12 @@ nav > ul > li.dropdown {
 
 /* RIGHT - Map */
 .map-container {
-  flex: 1;
+  flex: 1 1 350px;
   max-width: 550px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  box-sizing: border-box;
 }
 
 .map-container iframe {
@@ -1189,31 +1315,61 @@ nav > ul > li.dropdown {
     flex-direction: column;
     align-items: center;
   }
+  
+  .contact-info,
+  .contact-form,
+  .map-container {
+    max-width: 90%;
+    flex: 1 1 auto;
+    margin-bottom: 30px;
+  }
 }
 
+@media (max-width: 480px) {
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 1.5rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+  
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+}
 
 /* FOOTER */
 footer {
   background: #333333;
-  color: #ffff;
+  color: #fff; /* shortened */
   padding: 40px 20px;
   text-align: center;
   font-size: 0.9rem;
 }
+
 footer a {
-  color: #ffff;
+  color: #fff;
   font-weight: 600;
   text-decoration: none;
   margin: 0 10px;
   display: inline-block;
+  transition: color 0.3s ease; /* smoother hover */
 }
+
 footer a:hover {
   text-decoration: underline;
+  color: #31ADC6; /* add brand color highlight on hover */
 }
 
 /* Responsive */
+
+/* SERVICES GRID */
 @media (max-width: 960px) {
   .services-grid {
+    display: flex; /* ensure flex for column */
     flex-direction: column;
     align-items: center;
   }
@@ -1222,31 +1378,36 @@ footer a:hover {
     max-width: 400px;
   }
 }
+
+/* HERO TEXT FONT SIZE */
 @media (max-width: 460px) {
-  .hero-content 
-  {
+  .hero-content {
     font-size: 2.4rem;
   }
 }
+
+/* HERO LAYOUT */
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 20px; /* added for spacing */
   }
-  .hero-left, .hero-right {
+  .hero-left,
+  .hero-right {
     max-width: 100%;
-    margin: 0 0 30px;
+    margin-bottom: 30px;
   }
   .hero-right {
-    padding: 20px;
+    padding: 10px;
   }
 }
 
-/* Modal Styles */
+/* MODAL STYLES */
 .modal-overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
@@ -1272,8 +1433,8 @@ footer a:hover {
   text-align: center;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 12px 30px rgba(49, 173, 198, 0.4); /* teal glow */
-  border: 3px solid #31ADC6; /* brand accent border */
+  box-shadow: 0 12px 30px rgba(49, 173, 198, 0.4);
+  border: 3px solid #31ADC6;
   transition: box-shadow 0.3s ease;
 }
 
@@ -1289,12 +1450,12 @@ footer a:hover {
   border: none;
   font-size: 2.2rem;
   cursor: pointer;
-  color: #31ADC6; /* brand color */
+  color: #31ADC6;
   transition: color 0.3s ease;
 }
 
 .modal-close:hover {
-  color: #2385a0; /* darker teal on hover */
+  color: #2385a0;
 }
 
 .modal img.modal-image {
@@ -1307,14 +1468,13 @@ footer a:hover {
   box-shadow: 0 6px 18px rgba(49, 173, 198, 0.3);
 }
 
+/* CHECKLIST LIST */
 .checklist {
   list-style: none;
-  padding: 0;
-  margin: 25px 0;
+  padding: 0 10px;
+  margin: 25px auto;
   text-align: left;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .checklist li {
@@ -1326,12 +1486,12 @@ footer a:hover {
 }
 
 .checklist li i {
-  color: #28a745; /* brand teal checkmark */
+  color: #28a745;
   margin-right: 12px;
   font-size: 1.2rem;
 }
 
-/* Book Now Button */
+/* BOOK NOW BUTTON */
 .book-now-btn {
   display: inline-block;
   background: #31ADC6;
@@ -1349,14 +1509,14 @@ footer a:hover {
 }
 
 .book-now-btn:hover {
-  background: #2385a0; /* darker teal */
+  background: #2385a0;
   transform: scale(1.07);
   box-shadow: 0 9px 22px rgba(35, 133, 160, 0.7);
 }
 
-/* Estimate modal specific styles */
+/* ESTIMATE MODAL */
 .estimate-modal-overlay {
-  background: rgba(49, 173, 198, 0.85); /* teal translucent background */
+  background: rgba(49, 173, 198, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1374,13 +1534,13 @@ footer a:hover {
 }
 
 .estimate-modal {
-  background: #f0fbff; /* very light teal tint */
-  border: 4px solid #31ADC6; /* brand teal border */
+  background: #f0fbff;
+  border: 4px solid #31ADC6;
   border-radius: 20px;
   max-width: 600px;
   width: 90%;
   padding: 50px 35px;
-  color: #004080; /* brand navy text */
+  color: #004080;
   box-shadow: 0 12px 35px rgba(49, 173, 198, 0.45);
   transform: scale(0.85);
   opacity: 0;
@@ -1416,7 +1576,6 @@ footer a:hover {
   color: #002855;
 }
 
-/* Style inputs and select inside estimate modal */
 .estimate-modal input,
 .estimate-modal select {
   width: 100%;
@@ -1436,12 +1595,10 @@ footer a:hover {
   border-color: #2385a0;
 }
 
-/* Style the submit button for spacing if needed */
 .estimate-modal .book-now-btn {
   margin-bottom: 15px;
 }
 
-/* Terms and conditions text styling */
 .estimate-modal .form-terms {
   font-size: 0.9rem;
   color: #555;
@@ -1459,13 +1616,13 @@ footer a:hover {
   color: #002855;
 }
 
-/* Checkmark animation */
+/* CHECKMARK ANIMATION */
 .checkmark {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   display: inline-block;
-  border: 4px solid #ffd700; /* gold */
+  border: 4px solid #ffd700;
   position: relative;
   animation: scaleIn 0.3s ease forwards;
   margin: 25px auto;
@@ -1492,11 +1649,11 @@ footer a:hover {
   from { transform: scale(0); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
 /* ===== MOBILE STYLES ===== */
-/* --- Mobile Optimizations --- */
 @media (max-width: 768px) {
   /* CONTACT SECTION STACKING */
- .contact-wrapper {
+  .contact-wrapper {
     flex-direction: column;
     gap: 20px;
     padding: 0 10px;
@@ -1515,7 +1672,7 @@ footer a:hover {
   }
 
   /* FORM FIELD ADJUSTMENTS */
- .form-group input,
+  .form-group input,
   .form-group textarea {
     font-size: 1rem;
     padding: 0.75rem;
@@ -1526,7 +1683,7 @@ footer a:hover {
   }
 
   /* HERO SECTION */
- .hero-content {
+  .hero-content {
     flex-direction: column;
     align-items: center;
     padding: 20px;
@@ -1543,7 +1700,7 @@ footer a:hover {
   }
 
   /* MODAL */
- .modal {
+  .modal {
     padding: 25px 20px;
     width: 95%;
     max-width: 100%;
@@ -1564,7 +1721,7 @@ footer a:hover {
   }
 
   /* FOOTER */
- footer {
+  footer {
     padding: 30px 10px;
     font-size: 0.85rem;
   }
@@ -1574,10 +1731,11 @@ footer a:hover {
     margin: 10px 0;
   }
 
-  /* Buttons */
- .book-now-btn {
+  /* BUTTONS */
+  .book-now-btn {
     width: 100%;
     font-size: 1rem;
     padding: 12px 24px;
   }
 }
+
