@@ -1,26 +1,29 @@
 /* Reset */
 * {
-  margin: 0; 
-  padding: 0; 
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%; /* base = 16px */
+}
+
 body {
   font-family: 'Poppins', sans-serif;
-  background: #f8f9fa; /* light neutral background */
+  background: #f8f9fa;
   color: #222;
   line-height: 1.6;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 ul {
   list-style: none;
-}
-
-/* Smooth scroll for anchor links */
-html {
-  scroll-behavior: smooth;
 }
 
 /* HEADER */
@@ -28,47 +31,38 @@ header {
   position: fixed;
   top: 0; left: 0; right: 0;
   background: #fff;
-  height: 95px;
+  height: 5.9rem; /* 95px converted to rem */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 80px; /* reduced from 150px for better scaling */
+  padding: 0 5vw;
   z-index: 10000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
   transition: padding 0.3s ease;
 }
 
-/* Responsive padding */
-@media (max-width: 1200px) {
-  header {
-    padding: 0 40px;
-  }
-}
-@media (max-width: 600px) {
-  header {
-    padding: 0 20px;
-  }
-}
+/* Logo */
 .logo {
   font-weight: 700;
   font-size: 1.6rem;
-  color: #31ADC6; /* brand color for the text logo */
-  letter-spacing: 1.2px;
+  color: #31ADC6;
+  letter-spacing: 0.075rem;
   cursor: pointer;
   user-select: none;
   transition: color 0.3s ease;
 }
+
 .logo:hover {
-  color: #2385a0; /* slightly darker teal on hover */
+  color: #2385a0;
 }
 
 .logo-img {
-  height: 80px;
+  height: 5rem;
   width: auto;
   cursor: pointer;
   transition: filter 0.3s ease;
 }
-/* Slightly brighten logo on hover */
+
 .logo-img:hover {
   filter: brightness(1.1);
 }
@@ -77,13 +71,13 @@ header {
 nav {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 2rem;
   font-weight: 600;
-  font-size: 1.2rem;
-  background: #ffffffcc; /* subtle transparent white background */
-  padding: 10px 30px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border-radius: 0 0 20px 20px;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.6rem 2rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 1.25rem 1.25rem;
   position: sticky;
   top: 0;
   z-index: 2000;
@@ -91,113 +85,106 @@ nav {
 
 nav > ul {
   display: flex;
-  gap: 25px;
+  gap: 1.5rem;
   align-items: center;
-  position: relative;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
-/* Dropdown container */
+/* Dropdown */
 .dropdown {
   position: relative;
 }
 
-/* Dropdown button */
 .dropbtn {
   cursor: pointer;
   user-select: none;
   color: #004080;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
   transition: background 0.3s ease, color 0.3s ease;
 }
+
 .dropbtn:hover,
 .dropdown:hover > .dropbtn {
   background: #31ADC6;
   color: white;
 }
 
-/* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 230px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  border-radius: 8px;
+  min-width: 14rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  border-radius: 0.5rem;
   top: 100%;
   left: 0;
   z-index: 1000;
-  padding: 10px 0;
+  padding: 0.6rem 0;
 }
 
-/* Dropdown links */
 .dropdown-content li a {
   display: block;
-  padding: 12px 20px;
+  padding: 0.75rem 1.25rem;
   color: #004080;
   font-weight: 600;
   white-space: nowrap;
   transition: background 0.3s ease, color 0.3s ease;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 0.375rem;
 }
+
 .dropdown-content li a:hover {
   background-color: #31ADC6;
   color: white;
 }
 
-/* Show dropdown on hover of parent (desktop) */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Optional: Adjust nav spacing for dropdown */
 nav > ul > li.dropdown {
-  padding-right: 10px;
+  padding-right: 0.6rem;
 }
 
-/* Call Button */
-.call-btn {
-  background: #31ADC6; 
-  color: white;
-  padding: 8px 18px;
+/* Buttons */
+.call-btn, .book-btn {
   border-radius: 50px;
   font-weight: 700;
-  font-size: 0.9rem;
-  text-align: center;
-  cursor: pointer;
   border: none;
-  display: inline-block;
+  cursor: pointer;
   transition: background 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(49, 173, 198, 0.6);
-}
-.call-btn:hover {
-  background: #2385a0; /* slightly darker teal */
-  box-shadow: 0 6px 15px rgba(35, 133, 160, 0.8);
 }
 
-/* Book Now Button */
+.call-btn {
+  background: #31ADC6;
+  color: white;
+  padding: 0.5rem 1.125rem;
+  font-size: 0.9rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(49, 173, 198, 0.6);
+}
+
+.call-btn:hover {
+  background: #2385a0;
+  box-shadow: 0 0.375rem 0.9375rem rgba(35, 133, 160, 0.8);
+}
+
 .book-btn {
   background: #004080;
   color: #fff;
-  padding: 10px 18px;
-  border-radius: 50px;
-  font-weight: 700;
+  padding: 0.625rem 1.125rem;
   font-size: 1.1rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.6);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 64, 128, 0.6);
 }
+
 .book-btn:hover {
-  background: #ffbf00; /* brand yellow */
-  box-shadow: 0 6px 18px rgba(255, 191, 0, 0.8);
+  background: #ffbf00;
+  box-shadow: 0 0.375rem 1.125rem rgba(255, 191, 0, 0.8);
 }
-/* Promo Popup Styles */
+
+/* Promo Popup */
 .promo-popup {
   display: none;
   position: fixed;
@@ -207,27 +194,28 @@ nav > ul > li.dropdown {
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   z-index: 9999;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .promo-content {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 24px 32px;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
   text-align: center;
   max-width: 90%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   font-size: 1.25rem;
   color: #333;
   position: relative;
-  border: 3px solid #31adc6;
+  border: 0.1875rem solid #31adc6;
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2);
 }
 
 .close-promo {
   position: absolute;
-  top: 8px;
-  right: 12px;
+  top: 0.5rem;
+  right: 0.75rem;
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -237,6 +225,58 @@ nav > ul > li.dropdown {
 
 .close-promo:hover {
   color: #31adc6;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  header {
+    padding: 0 4vw;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .logo-img {
+    height: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav > ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .book-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .call-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+  }
+
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 0.75rem 4vw;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  nav {
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 /* HERO SECTION */
