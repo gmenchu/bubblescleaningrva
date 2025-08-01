@@ -1116,8 +1116,8 @@ nav > ul > li.dropdown {
 /* Make iframe scale responsively */
 .form-container iframe {
   width: 100%;
-  height: 100vh; /* Responsive height based on viewport height */
-  max-height: 1200px; /* Optional max height */
+  height: 120vh; /* Responsive height based on viewport height */
+  max-height: 1700px; /* Optional max height */
   border: none;
   border-radius: 8px;
   display: block;
@@ -1135,7 +1135,7 @@ nav > ul > li.dropdown {
   }
   
   .form-container iframe {
-    height: 70vh;
+    height: 100vh;
   }
 }
 
@@ -1149,7 +1149,7 @@ nav > ul > li.dropdown {
   }
   
   .form-container iframe {
-    height: 60vh;
+    height: 90vh;
   }
 }
 
@@ -1159,7 +1159,7 @@ nav > ul > li.dropdown {
   }
   
   .form-container iframe {
-    height: 50vh;
+    height: 90vh;
   }
 }
 
