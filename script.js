@@ -322,91 +322,127 @@ document.getElementById('areaModal').addEventListener('click', (e) => {
 // Checklist data
 const checklistData = {
   kitchen: {
+     basicCleaning: [
+      "Dust, wipe, and clean all counter tops",
+      "Dust counter top items",
+      "Clean exterior of counter top appliances (toaster, coffee maker)",
+      "Vacuum/Sweep/mop",
+      "Clean and sanitize sink",
+      "Clean exterior of large appliances",
+      "Clean stove top"
+    ],
     standardCleaning: [
       "Dust, wipe, and clean all counter tops",
       "Dust counter top items",
       "Clean counter top appliances exterior (coffee maker, toaster)",
-      "Spot clean cabinets",
+      "Vacuum/Sweep/mop",
+      "Clean and sanitize sink",
       "Clean exterior of large appliances",
-      "Clean and sanitize sink"
+      "Clean stove top",
+      "Spot clean cabinets"
     ],
     deepCleaning: [
       "Dust, wipe, and clean all counter tops",
       "Dust counter top items",
       "Clean counter top appliances exterior (coffee maker, toaster)",
-      "Spot clean cabinets",
-      "Clean exterior of large appliances",
+      "Vacuum/Sweep/mop",
       "Clean and sanitize sink",
-      "Wipe down cabinet fronts"
+      "Clean exterior of large appliances",
+      "Clean stove top",
+      "Spot clean cabinets",
+      "Wipe down cabinet fronts",
+      "Wipe down Base boards"
     ],
     moveInOutCleaning: [
       "Dust, wipe, and clean all counter tops",
       "Dust counter top items",
       "Clean counter top appliances exterior (coffee maker, toaster)",
-      "Spot clean cabinets",
-      "Clean exterior of large appliances",
+      "Vacuum/Sweep/mop",
       "Clean and sanitize sink",
+      "Clean exterior of large appliances",
+      "Clean stove top",
+      "Spot clean cabinets",
       "Wipe down cabinet fronts",
-      "Clean interior of cabinets and drawers",
-      "Clean interior of fridge and oven"
+      "Wipe down Base boards",
+      "Clean inside cabinets and drawers"
     ]
   },
   bathrooms: {
+    basicCleaning: [
+      "Dust, wipe, clean counter tops",
+      "Clean all mirrors and glass",
+      "Vacuum/Sweep/Mop",
+      "Clean shower/tub",
+      "Clean toilet and toilet area",
+      "Clean sink"
+    ],
     standardCleaning: [
-      "Scrub and clean tub/shower",
-      "Dust, wipe, and clean counter tops",
-      "Clean and sanitize sinks",
-      "Clean mirrors",
-      "Clean and sanitize toilet and toilet area"
+      "Dust, wipe, clean counter tops",
+      "Clean all mirrors and glass",
+      "Vacuum/Sweep/Mop",
+      "Clean shower/tub",
+      "Clean toilet and toilet area",
+      "Clean sink"
     ],
     deepCleaning: [
-      "Scrub and clean tub/shower",
-      "Dust, wipe, and clean counter tops",
-      "Clean and sanitize sinks",
-      "Clean mirrors",
-      "Clean and sanitize toilet and toilet area"
+      "Dust, wipe, clean counter tops",
+      "Clean all mirrors and glass",
+      "Vacuum/Sweep/Mop",
+      "Clean shower/tub",
+      "Scrub tile grout",
+      "Clean toilet and toilet area",
+      "Clean sink",
+      "Wipe down cabinet fronts",
+      "Wipe down base boards"
     ],
     moveInOutCleaning: [
-      "Scrub and clean tub/shower",
-      "Dust, wipe, and clean counter tops",
-      "Clean and sanitize sinks",
-      "Clean mirrors",
-      "Clean and sanitize toilet and toilet area",
+      "Dust, wipe, clean counter tops",
+      "Clean all mirrors and glass",
+      "Vacuum/Sweep/Mop",
+      "Clean shower/tub",
+      "Scrub tile grout",
+      "Clean toilet and toilet area",
+      "Clean sink",
+      "Wipe down cabinet fronts",
+      "Wipe down base boards",
       "Clean interior of cabinets and drawers"
     ]
-  },
-  bedroom: {
-    standardCleaning: ["Change bed sheets (add-on)"],
-    deepCleaning: ["Change bed sheets (add-on)"],
-    moveInOutCleaning: ["Change bed sheets (add-on)"]
+  //},
+  //bedroom: {
+    //standardCleaning: ["Change bed sheets (add-on)"],
+    //deepCleaning: ["Change bed sheets (add-on)"],
+   // moveInOutCleaning: ["Change bed sheets (add-on)"]
   },
   otherRooms: {
+    basicCleaning: [
+      "Remove cobwebs",
+      "Dust ceiling fans and light fixtures (within reach)",
+      "Dust wall art and decor",
+      "Dust knick-knacks and lamps",
+      "Dust furniture",
+      "Dust blinds",
+      "Empty trash"
+    ],
     standardCleaning: [
       "Remove cobwebs",
       "Dust ceiling fans and light fixtures (within reach)",
       "Dust wall art and decor",
       "Dust knick-knacks and lamps",
-      "Dust furniture and polish wooden furniture",
+      "Dust furniture",
       "Dust blinds",
       "Dust window sills",
       "Dust doors and door frames",
-      "Empty trash",
-      "Vacuum floors",
-      "Mop hard surface floors"
+      "Empty trash"
     ],
     deepCleaning: [
       "Remove cobwebs",
       "Dust ceiling fans and light fixtures (within reach)",
       "Dust wall art and decor",
       "Dust knick-knacks and lamps",
-      "Dust furniture and polish wooden furniture",
-      "Dust blinds",
-      "Dust window sills",
-      "Dust doors and door frames",
+      "Dust furniture",
+      "Dust and wipe blinds",
       "Empty trash",
-      "Vacuum floors",
-      "Mop hard surface floors",
-      "Dust and wipe down window sills, window frame, and window stool",
+      "Dust and wipe down window sills and frame",
       "Dust and wipe/clean baseboards",
       "Dust and clean all doors and door frames"
     ],
@@ -415,19 +451,17 @@ const checklistData = {
       "Dust ceiling fans and light fixtures (within reach)",
       "Dust wall art and decor",
       "Dust knick-knacks and lamps",
-      "Dust furniture and polish wooden furniture",
-      "Dust blinds",
-      "Dust window sills",
-      "Dust doors and door frames",
+      "Dust furniture",
       "Empty trash",
-      "Vacuum floors",
-      "Mop hard surface floors",
-      "Dust and wipe down window sills, window frame, and window stool",
+      "Dust and wipe blinds",
+      "Dust and wipe down window sills and frame",
       "Dust and wipe/clean baseboards",
-      "Dust and clean all doors and door frames"
+      "Dust and clean all doors and door frames",
+      "Clean inside all closets"
     ]
   }
 };
+
 
 const serviceTitles = {
   basicCleaning: "Basic Cleaning",
