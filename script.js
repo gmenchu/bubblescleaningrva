@@ -85,7 +85,7 @@ function openModal(service) {
         "Dust all reachable surfaces",
         "Vacuum carpets and rugs",
         "Mop hard floors",
-        "Clean bathroom surfaces",
+        "Spot clean cabinets",
         "Empty trash bins"
       ],
       buttonLink: "https://www.bookingkoala.com"
@@ -112,7 +112,7 @@ function openModal(service) {
       checklist: [
         "Full home cleaning",
         "Inside cabinets and drawers",
-        "Inside fridge and oven",
+        "Inside pantries and closets",
         "Baseboards and fixtures",
         "Trash removal"
       ],
