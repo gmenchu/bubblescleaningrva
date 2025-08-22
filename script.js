@@ -88,7 +88,7 @@ function openModal(service) {
         "Spot clean cabinets",
         "Empty trash bins"
       ],
-      buttonLink: "https://www.bookingkoala.com"
+      buttonLink: "https://bubblescleaningcompany.bookingkoala.com/booknow"
     },
     deepCleaning: {
       title: "Deep Cleaning",
@@ -102,7 +102,7 @@ function openModal(service) {
         "Light fixtures and vents",
         "Detailed kitchen & bathroom cleaning"
       ],
-      buttonLink: "https://www.bookingkoala.com"
+      buttonLink: "https://bubblescleaningcompany.bookingkoala.com/booknow"
     },
     moveInOutCleaning: {
       title: "Move In/Out Cleaning",
@@ -116,7 +116,7 @@ function openModal(service) {
         "Baseboards and fixtures",
         "Trash removal"
       ],
-      buttonLink: "https://www.bookingkoala.com"
+      buttonLink: "https://bubblescleaningcompany.bookingkoala.com/booknow"
     }
   };
 
