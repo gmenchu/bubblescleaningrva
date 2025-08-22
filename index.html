@@ -58,7 +58,7 @@
 </div>
 
 <!-- Your JavaScript (place this before the closing </body> tag) -->
-<script>
+<!-- <script>
   window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       document.getElementById('promo-popup').style.display = 'flex';
@@ -68,7 +68,7 @@
       document.getElementById('promo-popup').style.display = 'none';
     });
   });
-</script>
+</script> -->
 
 <!-- HERO SECTION -->
 <section class="hero">
@@ -375,23 +375,36 @@
 
 <script src="script.js" defer></script>
 <script>
-  // Show popup after delay
   window.addEventListener('DOMContentLoaded', function () {
-    setTimeout(() => {
-      document.getElementById('promo-popup').style.display = 'flex';
-    }, 3000);
-  });
-
-  // Close when clicking outside the popup
-  document.getElementById('promo-popup').addEventListener('click', function (e) {
-    if (e.target === this) {
-      this.style.display = 'none';
+    // Only show the popup if it hasn’t been closed before
+    if (!localStorage.getItem('promoClosed')) {
+      setTimeout(() => {
+        document.getElementById('promo-popup').style.display = 'flex';
+      }, 3000);
     }
-  });
 
-  // Close when clicking the X
-  document.getElementById('close-promo').addEventListener('click', function () {
-    document.getElementById('promo-popup').style.display = 'none';
+    // Close when clicking outside the content
+    document.getElementById('promo-popup').addEventListener('click', function (e) {
+      if (e.target === this) {
+        this.style.display = 'none';
+        localStorage.setItem('promoClosed', 'true');
+      }
+    });
+
+    // Close when clicking the X
+    document.getElementById('close-promo').addEventListener('click', function () {
+      document.getElementById('promo-popup').style.display = 'none';
+      localStorage.setItem('promoClosed', 'true');
+    });
+
+    // Optional: Close when clicking CTA
+    const ctaButton = document.querySelector('.promo-button');
+    if (ctaButton) {
+      ctaButton.addEventListener('click', function () {
+        document.getElementById('promo-popup').style.display = 'none';
+        localStorage.setItem('promoClosed', 'true');
+      });
+    }
   });
 </script>
 
